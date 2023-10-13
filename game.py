@@ -19,6 +19,7 @@ pygame.display.set_caption('Blue Background with Brown Rectangle')
 running = True
 while running:
     for event in pygame.event.get():
+        print(event)
         if event.type == pygame.QUIT:
             running = False
 
