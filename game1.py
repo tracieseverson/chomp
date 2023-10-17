@@ -17,7 +17,7 @@ pygame.display.set_caption('A beautiful beach in San Diego')
 
 #define a function to draw background
 
-def draw_background(screen):
+def draw_background(surf):
     #load our tiles
     water = pygame.image.load("assets/sprites/water.png").convert()
     sand = pygame.image.load("assets/sprites/sand_top.png").convert()
@@ -29,16 +29,16 @@ def draw_background(screen):
     #fill the screen
     for x in range(0, screen_width, tile_size):
         for y in range(0, screen_height, tile_size):
-            screen.blit(water, (x,y))
+            surf.blit(water, (x,y))
 
     #draw the sandy bottom
     for x in range(0, screen_width, tile_size):
-        screen.blit(sand, (x, screen_height-tile_size))
+        surf.blit(sand, (x, screen_height-tile_size))
 
     #add seagrass randomly at the bottom of the beach
     for _ in range(7):
         x = random.randint(0, screen_width)
-        screen.blit(seagrass, (x, screen_height-tile_size*2))
+        surf.blit(seagrass, (x, screen_height-tile_size*2))
 
 #Main Loop
 running = True
