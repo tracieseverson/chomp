@@ -36,7 +36,7 @@ def draw_background(surf):
         surf.blit(sand, (x, screen_height-tile_size))
 
     #add seagrass randomly at the bottom of the beach
-    for _ in range(7):
+    for _ in range(5):
         x = random.randint(0, screen_width)
         surf.blit(seagrass, (x, screen_height-tile_size*2))
 
