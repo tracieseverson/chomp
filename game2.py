@@ -47,20 +47,31 @@ def draw_background(surf):
 
 def draw_fishes(surf):
     #Load our file tiles onto our surface
+    green_fish = pygame.image.load("assets/sprites/green_fish.png").convert()
+    #set colorkey
+    green_fish.set_colorkey((0,0,0))
 
+    #distribute our green fish on the screen randomly
+    for _ in range(5):
+        x = random.randint(0, screen_width-tile_size)
+        y = random.randint(0, screen_height-tile_size)
+        surf.blit(green_fish,(x,y))
 
 #Main Loop
 running = True
 background = screen.copy()
 draw_background(background)
+draw_fishes((background))
 
 while running:
     for event in pygame.event.get():
         #print(event)
         if event.type == pygame.QUIT:
             running = False
+
     #draw background
     screen.blit(background, (0,0))
+
 
     #update the display
     pygame.display.flip()
