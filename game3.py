@@ -56,7 +56,7 @@ draw_background(background)
 
 #draw fish on the screen
 for _ in range(5):
-    fishes.add(Fish(random.randint(0, screen_width-tile_size),random.randint(tile_size, screen_height-tile_size)))
+    fishes.add(Fish(random.randint(tile_size, screen_width-tile_size),random.randint(tile_size, screen_height-2*tile_size)))
 
 while running:
     for event in pygame.event.get():
