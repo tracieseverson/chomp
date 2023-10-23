@@ -1,6 +1,7 @@
 #create a pygame sprite class for a fish
 
 import pygame
+import random
 
 class Fish(pygame.sprite.Sprite):
     def __init__(self, x, y):
